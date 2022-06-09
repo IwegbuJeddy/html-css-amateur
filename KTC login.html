@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+<title>KTC Login</title>
+
+</head>
+<body>
+
+<div class="loginbox">
+    <h1>Login Page</h1>
+    
+        <p>Username</p>
+        <input type="text" id="u_name" placeholder="Enter username">
+        <p>Password</p>
+        <input type="password" id="p_word" placeholder="Enter password" >
+        <input type="password" id="p_word1" placeholder="Confirm password">
+        <input type="submit" onclick="check();" value="Login">
+        <br> <a href="#">Lost your password</a></br>
+        <br> <a href="#">Create account</a></br>
+
+    
+    
+   
+
+</div>
+<style>
+   
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url(C:/Users/VP/Pictures/download.jpg);
+    background-size: cover;
+    text-align:center;
+   
+}
+
+    #warning{
+        width:100%;
+        height:30px;
+        background-color: rgb(0, 128, 64);
+        display:none;
+        transition: 1s ease-in;
+    }
+.loginbox {
+    width:320px;
+    height:500px;
+    background: #000;
+    color:#fff;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:  70px 30px;
+}
+.avatar {
+    width:100px;
+    height:100px;
+    border:20px;
+    border-radius: 50%;
+    position:absolute;
+    top:-50%;
+    left:calc(50% - 50px);
+
+}
+h1 {
+    margin:0;
+    padding:0 0 20px;
+    text-align: center;
+    font-size:22px;
+    font-family:Calibri;
+
+}
+.loginbox p {
+    margin:0;
+    padding:0;
+    font-weight: bold;
+    font-family:Calibri ;
+}
+.loginbox input {
+    width:100%;
+    margin-bottom: 20px;;
+}
+.loginbox input[type="text"], input[type="password"] {
+    border:none;
+    border-bottom:1px solid #fff;
+    background: transparent;
+    outline:none;
+    height:40px;
+    color:#fff;
+}
+.loginbox input[type="submit"] {
+    background:red;
+    color:#FFF;
+    border:2px solid red; 
+    border-radius:20px;
+    height:40px;
+}
+.loginbox input[type="submit"]:hover {
+    background:#ffc;
+    color:#000;
+}
+a {
+    text-align:center;
+    color:white;
+    font-weight:300px;
+    text-decoration: none;
+    font-family: Calibri;
+}
+
+
+
+  </style>
+<script>
+    var i=0;
+   
+    function run () {
+        alert("Successfully signed in !")
+    }
+    function check() {
+          
+        var u_name = document.getElementById('u_name').value;
+        var p_word = document.getElementById('p_word').value;
+        var p_word1 = document.getElementById('p_word1').value;
+        var war = document.getElementById('warning');
+ 
+
+
+
+       if (u_name.length < 8) {
+            
+              war.innerHTML = "Needs more characters for username";     
+              alert("Needs more characters for username");
+
+        }
+        if ( u_name.length >= 8 & p_word == p_word1) {
+            alert("Login Successful");
+        }
+
+        if (u_name.length < 8) {
+            alert("Username needs more characters");
+
+        }
+        if (p_word !== p_word1){
+            alert("Passwords do not match");
+        }
+       
+    }
+     
+
+    
+</script>
+
+</body>
+
+</html>
